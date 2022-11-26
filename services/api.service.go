@@ -10,8 +10,8 @@ import (
 )
 
 type Response struct {
-	statusCode int
-	response   string
+	StatusCode int
+	Response   string
 }
 
 func Get(url string, header http.Header) (Response, error) {
@@ -57,8 +57,8 @@ func Get(url string, header http.Header) (Response, error) {
 	}(resp.Body)
 
 	response := Response{
-		statusCode: 200,
-		response:   fmt.Sprintf("%s", responseBody),
+		StatusCode: 200,
+		Response:   fmt.Sprintf("%s", responseBody),
 	}
 
 	return response, nil
