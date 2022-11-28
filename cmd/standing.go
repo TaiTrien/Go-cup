@@ -39,7 +39,7 @@ type Team struct {
 	ID        int    `json:"id"`
 	Name      string `json:"name"`
 	ShortName string `json:"shortName"`
-	Tla       string `json:"tla"`
+	TlA       string `json:"tla"`
 	Crest     string `json:"crest"`
 }
 
@@ -57,7 +57,7 @@ const (
 var standingCmd = &cobra.Command{
 	Use:   "standing",
 	Short: "World Cup standing",
-	Long:  `You can track World Cup standings for details'`,
+	Long:  `You can track World Cup standing details`,
 	Run: func(cmd *cobra.Command, args []string) {
 		listStandings()
 	},
