@@ -13,7 +13,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "Go-cup",
 	Short: "A world cup CLI written by Golang",
-	Long:  `You can use it to enjoy world cup 2022`,
+	Long:  `Enjoy your world cup 2022`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
