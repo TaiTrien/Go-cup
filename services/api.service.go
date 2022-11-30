@@ -21,7 +21,7 @@ func Get(url string, header http.Header) (Response, error) {
 	}
 
 	if header == nil {
-		config, err := util.LoadConfig(".")
+		config, err := util.LoadConfig()
 		if err != nil {
 			log.Fatalln(err)
 			return Response{}, err

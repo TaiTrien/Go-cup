@@ -1,21 +1,23 @@
 package util
 
-import "github.com/spf13/viper"
+import (
+	"github.com/joho/godotenv"
+	"log"
+	"os"
+)
 
 type Config struct {
 	ApiKey string `mapstructure:"API_KEY"`
 }
 
-func LoadConfig(path string) (config Config, err error) {
-	viper.AddConfigPath(path)
-	viper.SetConfigName("./")
-	viper.SetConfigType("env")
+func LoadConfig() (config Config, err error) {
+	err = godotenv.Load(".env")
 
-	viper.AutomaticEnv()
-	err = viper.ReadInConfig()
 	if err != nil {
-		return
+		log.Fatalf("Some error occured. Err: %s", err)
 	}
-	err = viper.Unmarshal(&config)
+
+	val := os.Getenv("API_KEY")
+	config.ApiKey = val
 	return
 }
