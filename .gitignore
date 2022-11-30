@@ -15,3 +15,7 @@
 # vendor/
 *.env
 dist/
+node_modules/
+bin/
+package.json
+yarn.lock
